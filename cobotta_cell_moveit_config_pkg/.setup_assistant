@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: cobotta_cell_description
+    relative_path: urdf/cobotta_cell.urdf.xacro
+  srdf:
+    relative_path: config/cobotta_cell.srdf
+  package_settings:
+    author_name: rwu@ipa.fraunhofer.de
+    author_email: rwu@ipa.fraunhofer.de
+    generated_timestamp: 1710882392

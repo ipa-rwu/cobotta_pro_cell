@@ -1,0 +1,48 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+
+    denso_joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    vtem_point_controller:
+      type: point_move_controller/PointMoveController
+
+    schunk_egp64_gripper_controller:
+      type: position_controllers/GripperActionController
+
+    denso_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+denso_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - c_210_cobotta_pro_joint_1
+      - c_210_cobotta_pro_joint_2
+      - c_210_cobotta_pro_joint_3
+      - c_210_cobotta_pro_joint_4
+      - c_210_cobotta_pro_joint_5
+      - c_210_cobotta_pro_joint_6
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 1000.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    open_loop_control: true
+    constraints:
+      stopped_velocity_tolerance: 0.0
+      goal_time: 0.0
+vtem_point_controller:
+  ros__parameters:
+    joints:
+      - c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint
+      - c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint
+schunk_egp64_gripper_controller:
+  ros__parameters:
+    joints:
+      - c_213_schunk_egp64_gripper_finger_1_joint
+      - c_213_schunk_egp64_gripper_finger_2_joint

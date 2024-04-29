@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="cobotta_cell">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="c_210_cobotta_pro">
+        <chain base_link="c_210_cobotta_pro_base_link" tip_link="c_210_cobotta_pro_J6"/>
+    </group>
+    <group name="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <link name="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link"/>
+        <link name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_link"/>
+        <link name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_link"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_joint"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint"/>
+    </group>
+    <group name="c_213_schunk_egp64_gripper">
+        <link name="c_213_schunk_egp64_gripper_base_link"/>
+        <link name="c_213_schunk_egp64_gripper_finger_1_link"/>
+        <link name="c_213_schunk_egp64_gripper_finger_2_link"/>
+        <joint name="c_213_schunk_egp64_gripper_joint"/>
+        <joint name="c_213_schunk_egp64_gripper_finger_1_joint"/>
+        <joint name="c_213_schunk_egp64_gripper_finger_2_joint"/>
+    </group>
+    <group name="c_210_cobotta_pro_c_213_schunk_egp64_gripper">
+        <group name="c_210_cobotta_pro"/>
+        <group name="c_213_schunk_egp64_gripper"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="c_210_cobotta_pro">
+        <joint name="c_210_cobotta_pro_joint_1" value="0.026"/>
+        <joint name="c_210_cobotta_pro_joint_2" value="0.188"/>
+        <joint name="c_210_cobotta_pro_joint_3" value="1.374"/>
+        <joint name="c_210_cobotta_pro_joint_4" value="-3.1502"/>
+        <joint name="c_210_cobotta_pro_joint_5" value="-1.4897"/>
+        <joint name="c_210_cobotta_pro_joint_6" value="0.0347"/>
+    </group_state>
+    <group_state name="close" group="c_213_schunk_egp64_gripper">
+        <joint name="c_213_schunk_egp64_gripper_finger_1_joint" value="0.01"/>
+        <joint name="c_213_schunk_egp64_gripper_finger_2_joint" value="0.01"/>
+    </group_state>
+    <group_state name="home" group="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint" value="0.01"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint" value="0.01"/>
+    </group_state>
+    <group_state name="prepare_all" group="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint" value="0.01"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint" value="0.157"/>
+    </group_state>
+    <group_state name="pre_pick_01" group="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint" value="0.05"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint" value="0.01"/>
+    </group_state>
+    <group_state name="pre_pick_02" group="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint" value="0.055"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint" value="0.01"/>
+    </group_state>
+    <group_state name="pre_pick_03" group="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint" value="0.06"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint" value="0.01"/>
+    </group_state>
+    <group_state name="pre_pick_04" group="c_212_pneumatic_disassembly_unit_with_2_cylinders">
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_joint" value="0.065"/>
+        <joint name="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_joint" value="0.01"/>
+    </group_state>
+    <group_state name="open" group="c_213_schunk_egp64_gripper">
+        <joint name="c_213_schunk_egp64_gripper_finger_1_joint" value="0.001"/>
+        <joint name="c_213_schunk_egp64_gripper_finger_2_joint" value="0.001"/>
+    </group_state>
+    <group_state name="pre_pick" group="c_210_cobotta_pro">
+        <joint name="c_210_cobotta_pro_joint_1" value="0.20944"/>
+        <joint name="c_210_cobotta_pro_joint_2" value="0.331613"/>
+        <joint name="c_210_cobotta_pro_joint_3" value="1.88496"/>
+        <joint name="c_210_cobotta_pro_joint_4" value="-3.1765"/>
+        <joint name="c_210_cobotta_pro_joint_5" value="-0.802851"/>
+        <joint name="c_210_cobotta_pro_joint_6" value="-1.43117"/>
+    </group_state>
+    <group_state name="pick" group="c_210_cobotta_pro">
+        <joint name="c_210_cobotta_pro_joint_1" value="0.20944"/>
+        <joint name="c_210_cobotta_pro_joint_2" value="0.471239"/>
+        <joint name="c_210_cobotta_pro_joint_3" value="1.79769"/>
+        <joint name="c_210_cobotta_pro_joint_4" value="-3.1765"/>
+        <joint name="c_210_cobotta_pro_joint_5" value="-0.942478"/>
+        <joint name="c_210_cobotta_pro_joint_6" value="-1.43117"/>
+    </group_state>
+    <group_state name="place_01" group="c_210_cobotta_pro">
+        <joint name="c_210_cobotta_pro_joint_1" value="0.383972"/>
+        <joint name="c_210_cobotta_pro_joint_2" value="0.453786"/>
+        <joint name="c_210_cobotta_pro_joint_3" value="1.8326"/>
+        <joint name="c_210_cobotta_pro_joint_4" value="-3.1765"/>
+        <joint name="c_210_cobotta_pro_joint_5" value="-0.925025"/>
+        <joint name="c_210_cobotta_pro_joint_6" value="-1.25664"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="c_213_schunk_egp64_gripper" parent_link="c_210_cobotta_pro_J6" group="c_213_schunk_egp64_gripper" parent_group="c_210_cobotta_pro"/>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="fixed_joint" type="fixed" parent_frame="fixed_link" child_link="world"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_210_cobotta_pro_J2" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_210_cobotta_pro_J3" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_210_cobotta_pro_J4" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_210_cobotta_pro_base_link" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_211_kiwi_cell_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_211_kiwi_cell_robot_base_plate_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J1" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J2" link2="c_210_cobotta_pro_J3" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J2" link2="c_210_cobotta_pro_J4" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J2" link2="c_210_cobotta_pro_J5" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J2" link2="c_210_cobotta_pro_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_210_cobotta_pro_J4" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_210_cobotta_pro_J5" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_210_cobotta_pro_J6" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_210_cobotta_pro_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_213_schunk_egp64_gripper_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_213_schunk_egp64_gripper_finger_1_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J3" link2="c_213_schunk_egp64_gripper_finger_2_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J4" link2="c_210_cobotta_pro_J5" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J4" link2="c_210_cobotta_pro_J6" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J4" link2="c_211_kiwi_cell_base_link" reason="Default"/>
+    <disable_collisions link1="c_210_cobotta_pro_J4" link2="c_213_schunk_egp64_gripper_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J4" link2="c_213_schunk_egp64_gripper_finger_1_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J4" link2="c_213_schunk_egp64_gripper_finger_2_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J5" link2="c_210_cobotta_pro_J6" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J5" link2="c_211_kiwi_cell_base_link" reason="Default"/>
+    <disable_collisions link1="c_210_cobotta_pro_J5" link2="c_213_schunk_egp64_gripper_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J5" link2="c_213_schunk_egp64_gripper_finger_1_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J5" link2="c_213_schunk_egp64_gripper_finger_2_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J6" link2="c_213_schunk_egp64_gripper_base_link" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_J6" link2="c_213_schunk_egp64_gripper_finger_1_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_J6" link2="c_213_schunk_egp64_gripper_finger_2_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_base_link" link2="c_211_kiwi_cell_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_base_link" link2="c_211_kiwi_cell_robot_base_plate_link" reason="Adjacent"/>
+    <disable_collisions link1="c_210_cobotta_pro_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_210_cobotta_pro_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_211_kiwi_cell_base_link" link2="c_211_kiwi_cell_robot_base_plate_link" reason="Adjacent"/>
+    <disable_collisions link1="c_211_kiwi_cell_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link" reason="Never"/>
+    <disable_collisions link1="c_211_kiwi_cell_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_211_kiwi_cell_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_211_kiwi_cell_robot_base_plate_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link" reason="Adjacent"/>
+    <disable_collisions link1="c_211_kiwi_cell_robot_base_plate_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_211_kiwi_cell_robot_base_plate_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_link" reason="Never"/>
+    <disable_collisions link1="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_pull_cylinder_link" reason="Adjacent"/>
+    <disable_collisions link1="c_212_pneumatic_disassembly_unit_with_2_cylinders_base_link" link2="c_212_pneumatic_disassembly_unit_with_2_cylinders_push_cylinder_link" reason="Adjacent"/>
+    <disable_collisions link1="c_213_schunk_egp64_gripper_base_link" link2="c_213_schunk_egp64_gripper_finger_1_link" reason="Adjacent"/>
+    <disable_collisions link1="c_213_schunk_egp64_gripper_base_link" link2="c_213_schunk_egp64_gripper_finger_2_link" reason="Adjacent"/>
+    <disable_collisions link1="c_213_schunk_egp64_gripper_finger_1_link" link2="c_213_schunk_egp64_gripper_finger_2_link" reason="Default"/>
+</robot>
