@@ -10,13 +10,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/base_link.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/base_link.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/base_link.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/base_link.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -29,13 +29,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J1.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J1.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J1.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J1.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -56,13 +56,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J2.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J2.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J2.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J2.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -83,13 +83,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J3.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J3.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J3.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J3.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -110,13 +110,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J4.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J4.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J4.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J4.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -137,13 +137,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J5.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J5.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J5.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J5.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
@@ -164,13 +164,13 @@
 			<visual>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J6.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J6.dae" scale="1 1 1"/>
 				</geometry>
 			</visual>
 			<collision>
 				<origin rpy="0 0 0" xyz="0 0 0"/>
 				<geometry>
-					<mesh filename="file:///$(find denso_robot_descriptions)/robots/$(arg model)/meshes/J6.dae" scale="1 1 1"/>
+					<mesh filename="package://denso_robot_descriptions/robots/$(arg model)/meshes/J6.dae" scale="1 1 1"/>
 				</geometry>
 			</collision>
 			<inertial>
