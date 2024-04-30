@@ -26,13 +26,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/base_link.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/base_link.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/base_link.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/base_link.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -45,13 +45,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J1.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J1.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J1.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J1.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -72,13 +72,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J2.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J2.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J2.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J2.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -99,13 +99,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J3.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J3.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J3.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J3.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -126,13 +126,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J4.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J4.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J4.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J4.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -153,13 +153,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J5.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J5.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J5.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J5.dae"/>
       </geometry>
     </collision>
     <inertial>
@@ -180,13 +180,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J6.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J6.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://cvrb0609_description/meshes/J6.dae" scale="1 1 1"/>
+        <mesh filename="package://cvrb0609_description/meshes/J6.dae"/>
       </geometry>
     </collision>
     <inertial>
